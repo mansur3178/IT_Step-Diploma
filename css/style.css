@@ -17,27 +17,20 @@ box-sizing:border-box;
 
 
 body{
+    font-family:'Orbitron', sans-serif;
 
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.85)
+    ),
+    url("../img/bg.avif");
 
-font-family:'Orbitron', sans-serif;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
-
-background:
-
-linear-gradient(
-
-120deg,
-
-#050505,
-
-#1a1a1a
-
-);
-
-
-color:white;
-
-
+    color:white;
 }
 
 
@@ -183,6 +176,10 @@ gap:25px;
 
 padding:40px;
 
+align-items: start;
+
+grid-auto-rows: min-content;
+
 
 }
 
@@ -205,17 +202,21 @@ background:#222;
 
 padding:25px;
 
+min-height:110px;
+
+height:auto;
+
 
 border-radius:20px;
 
 
 transition:.3s;
 
-
 }
 
 .cards h2 {
     margin-bottom: 20px;
+    min-height: 60px;
 }
 
 
@@ -241,7 +242,7 @@ box-shadow:
 table{
 
 
-width:90%;
+width:95%;
 
 
 margin:40px auto;
@@ -271,7 +272,7 @@ background:#e10600;
 
 padding:20px;
 
-
+font-size:24px;
 }
 
 
@@ -281,6 +282,7 @@ td{
 
 padding:18px;
 
+font-size:22px;
 
 border-bottom:1px solid #555;
 
@@ -302,6 +304,8 @@ background:#333;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 40px;
+    align-items:start;
+    grid-auto-rows: max-content;
 }
 
 .gallery img {
@@ -352,67 +356,211 @@ margin-top:20px;
 }
 
 
+.highlights{
+    padding:40px;
+    text-align:center;
+}
+
+.highlights h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.highlight-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+}
+
+.highlight{
+    background:#222;
+    padding:20px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.highlight:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px red;
+}
+
+.highlight h3{
+    margin-bottom:10px;
+}
+
+.highlight p{
+    color:#ccc;
+    font-size:16px;
+}
+
+
+
+.stats{
+    padding:40px;
+    text-align:center;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+}
+
+.stats-grid div{
+    background:#111;
+    padding:20px;
+    border-radius:15px;
+}
+
+.stats h3{
+    font-size:28px;
+    color:red;
+}
+
+
+.sport-card{
+    background:#222;
+    border-radius:15px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:0.3s;
+}
+
+.sport-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.sport-info{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sport-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px red;
+}
+
+
+
+.logo{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+    transition:0.3s;
+}
+
+.logo:hover{
+    transform:scale(1.2);
+    filter:drop-shadow(0 0 10px red);
+}
+
+
 /*Адаптивная Верстка */
 
-/* ===== RESPONSIVE DESIGN ===== */
 
-@media (max-width: 700px) {
+@media (max-width: 1024px) {
 
-    /* 🔥 Заголовки */
-    h1 {
-        font-size: 48px;
+    header{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
     }
 
-    h2 {
-        font-size: 40px;
+    nav{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
     }
 
-    p {
-        font-size: 20px;
+    nav a{
+        font-size:20px;
+        margin:5px;
+        padding:10px 14px;
     }
 
-    /* 🔥 Кнопки */
-    .btn {
-        font-size: 22px;
-        padding: 22px 50px;
-        width: 95%;
+    .hero{
+        height:auto;
+        padding:70px 20px;
     }
 
-    /* 🔥 Навигация */
-    nav a {
-        font-size: 22px;
+    .hero h1{
+        font-size:38px;
     }
 
-    /* 🔥 Карточки */
-    .cards section {
-        padding: 35px;
+    .hero h2{
+        font-size:28px;
     }
 
-    .cards h2 {
-        font-size: 40px;
+    .hero p{
+        font-size:16px;
     }
 
-    .cards p {
-        font-size: 20px;
+    .cards{
+        grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+        padding:25px;
     }
 
-    /* 🔥 Картинки */
-    .cards img {
-        height: 300px;
+    .cards img{
+        height:220px;
     }
 
-    /* 🔥 Hero блок */
-    .hero {
-        height: auto;
-        padding: 100px 20px;
+    table{
+        width:95%;
+        font-size:16px;
     }
 
-    .hero h1,
-    .hero h2 {
-        font-size: 50px;
+    th, td{
+        padding:16px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    nav a{
+        font-size:16px;
+        padding:8px 10px;
     }
 
-    .hero p {
-        font-size: 24px;
+    .hero{
+        padding:50px 15px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+        padding:15px;
+    }
+
+    .cards img{
+        height:200px;
+    }
+
+    .btn, button{
+        width:100%;
+        font-size:16px;
+        min-height:55px;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th, td{
+        padding:10px;
     }
 }
